@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sign In</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="form-header">
+        <h1>Sign In</h1>
+      </div>
+
+      <form action="/login" method="POST">
+        <!-- Account Type Selection -->
+        <fieldset>
+          <legend>Select Account Type</legend>
+          <div class="radio-wrapper">
+            <input
+              type="radio"
+              id="personal"
+              name="account_type"
+              value="personal"
+              required
+            />
+            <label for="personal">Personal Account</label>
+          </div>
+          <div class="radio-wrapper">
+            <input
+              type="radio"
+              id="business"
+              name="account_type"
+              value="business"
+            />
+            <label for="business">Business Account</label>
+          </div>
+          <div class="radio-wrapper">
+            <input
+              type="radio"
+              id="student"
+              name="account_type"
+              value="student"
+            />
+            <label for="student">Student Account</label>
+          </div>
+        </fieldset>
+
+        <!-- Basic Information -->
+        <div>
+          <label for="email" class="required">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Enter your email"
+          />
+        </div>
+
+        <div>
+          <label for="password" class="required">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="Enter your password"
+          />
+        </div>
+
+        <!-- Location Selection -->
+        <div>
+          <label for="country" class="required">Country</label>
+          <select id="country" name="country" required>
+            <option value="">Select a country</option>
+            <option value="MA">Morocco</option>
+            <option value="US">United States</option>
+            <option value="UK">United Kingdom</option>
+            <option value="FR">France</option>
+            <option value="DE">Germany</option>
+            <option value="ES">Spain</option>
+            <option value="IT">Italy</option>
+            <option value="CA">Canada</option>
+            <option value="AU">Australia</option>
+            <option value="JP">Japan</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="city" class="required">City</label>
+          <select id="city" name="city" required>
+            <option value="">Select a country first</option>
+            <optgroup label="Morocco">
+              <option value="casablanca">Casablanca</option>
+              <option value="rabat">Rabat</option>
+              <option value="fes">Fes</option>
+              <option value="marrakech">Marrakech</option>
+              <option value="agadir">Agadir</option>
+              <option value="tangier">Tangier</option>
+              <option value="meknes">Meknes</option>
+              <option value="oujda">Oujda</option>
+            </optgroup>
+            <!-- Other cities remain the same -->
+          </select>
+        </div>
+
+        <!-- Communication Preferences -->
+        <fieldset>
+          <legend>Communication Preferences</legend>
+          <div class="checkbox-wrapper">
+            <input
+              type="checkbox"
+              id="newsletter"
+              name="newsletter"
+              value="yes"
+            />
+            <label for="newsletter">Subscribe to newsletter</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="updates" name="updates" value="yes" />
+            <label for="updates">Receive product updates</label>
+          </div>
+          <div class="checkbox-wrapper">
+            <input
+              type="checkbox"
+              id="promotions"
+              name="promotions"
+              value="yes"
+            />
+            <label for="promotions">Receive promotional emails</label>
+          </div>
+        </fieldset>
+
+        <!-- Contact Method -->
+        <fieldset>
+          <legend>Preferred Contact Method</legend>
+          <div class="radio-wrapper">
+            <input
+              type="radio"
+              id="contact_email"
+              name="contact_method"
+              value="email"
+              required
+            />
+            <label for="contact_email">Email</label>
+          </div>
+          <div class="radio-wrapper">
+            <input
+              type="radio"
+              id="contact_phone"
+              name="contact_method"
+              value="phone"
+            />
+            <label for="contact_phone">Phone</label>
+          </div>
+          <div class="radio-wrapper">
+            <input
+              type="radio"
+              id="contact_both"
+              name="contact_method"
+              value="both"
+            />
+            <label for="contact_both">Both</label>
+          </div>
+        </fieldset>
+
+        <!-- Terms and Conditions -->
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="terms" name="terms" required />
+          <label for="terms" class="required"
+            >I agree to the Terms and Conditions</label
+          >
+        </div>
+        <div class="checkbox-wrapper">
+          <input type="checkbox" id="privacy" name="privacy" required />
+          <label for="privacy" class="required"
+            >I agree to the Privacy Policy</label
+          >
+        </div>
+
+        <button type="submit">Sign In</button>
+      </form>
+
+      <div class="form-footer">
+        <a href="#" class="forgot-password">Forgot password?</a>
+      </div>
+    </div>
+
+    <!-- <script>
+        // City filtering script (same as before)
+        document.getElementById('country').addEventListener('change', function() {
+            const country = this.value;
+            const citySelect = document.getElementById('city');
+            const optgroups = citySelect.getElementsByTagName('optgroup');
+            
+            citySelect.selectedIndex = 0;
+            
+            for(let optgroup of optgroups) {
+                optgroup.style.display = 'none';
+            }
+            
+            if(country) {
+                const selectedOptgroup = citySelect.querySelector(`optgroup[label="${citySelect.querySelector(`option[value="${country}"]`).textContent}"]`);
+                if(selectedOptgroup) {
+                    selectedOptgroup.style.display = '';
+                }
+            }
+        });
+    </script> -->
+  </body>
+</html>
