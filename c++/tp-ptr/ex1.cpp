@@ -5,7 +5,7 @@ int main(){
     int N = 0 , M = 0;
     int  *A = NULL, *B = NULL, * PA = A, *PB = B;
 
-    // lire la taille du tableau A
+    // lire la taille du tableau A.
     do
     {
         cout << "saisir la taille du premier " << endl;
