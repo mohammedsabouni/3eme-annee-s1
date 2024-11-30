@@ -2,16 +2,19 @@
 using namespace std;
 
 int main(){
-    int X, N = 0, T[50];
-    int *PA , *PB;
+    int X, N = 0;
+    int *T, *PA , *PB;
 
     //lire la taille du tableau
     do
     {
-        cout << "saisir la taille du tableau max 50" << endl;
+        cout << "saisir la taille du tableau " << endl;
         cin >> N;
-    } while (N > 50);
+    } while (N < 0);
     
+    //declarer tableau dynamique
+    T = new int [N];
+
     //remplir le tableau
     for (PA = T; PA < T + N; PA++)
     {
@@ -49,6 +52,8 @@ int main(){
     {
         cout << *(PA) << " | \t";
     }
+
+    delete []T;
     
     return 0;
 }

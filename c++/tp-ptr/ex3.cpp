@@ -4,41 +4,43 @@ using namespace std;
 int main(){
     int N = 0, M = 0, T[50][50];
 
-    //pointeur vers un tableau d'entiers
-    int (*p)[50] = T;
+    //pointeur vers un tableau de tableaux d'entiers
+    int (*p)[50] = T, *q;
 
     do
     {
         cout << "saisir le nombre de lignes max 50 :" << endl;
         cin >> N;
-    } while ((N < 0) && (N > 50));
+    } while ((N < 0) || (N > 50));
     
     do
     {
         cout << "saisir le nombre de colomnes max 50 :" << endl;
         cin >> M;
-    } while ((M < 0) && (M > 50));
+    } while ((M < 0) || (M > 50));
     
     
 
     //lire le tableau 2D
-    for (int i = 0; i < N; i++)
+    for (p = T; p < T+N; p++)
     {
-        for (int j = 0; j < M; j++)
+        for (q = *p; q < *p + M; q++)
         {
-            cout << "entrer T[" << i << "] [" << j <<"]" << endl;
-            cin >> *(*(p + i) + j) ;
+            cout << "entrer T[" << p-T << "][" << q-*p << "]" << endl;
+            cin >> *q;
         }
         
     }
     
-    for (int i = 0; i < N; i++)
+    //afficher la matrice
+    cout << "MATRICE :"<< endl;
+    for (p = T; p < T+N; p++)
     {
-        for (int j = 0; j < M; j++)
+        for (q = *p; q < *p + M; q++)
         {
-            cout << *(*(p + i)+ j) << " |\t";
+            cout << *(q) << "\t";
         }
-        
+              
         cout << endl;
     }
     
