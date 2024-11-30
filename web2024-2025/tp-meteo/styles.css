@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 400px;
+    margin: auto;
+}
+
+header {
+    background-color: #437df0;
+    padding: 10px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;  
+}
+
+.top-info {
+    color: aliceblue;
+}
+
+.top-icon {
+    color: rgb(230, 185, 19);
+    font-size: 50px;
+}
+
+.top-deg {
+    font-size: 50px;
+}
+
+.city {
+    font-size: 30px;
+}
+
+.sup-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    margin-top: 10px;
+}
