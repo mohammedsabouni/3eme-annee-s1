@@ -101,3 +101,38 @@ footer i {
     font-size: 50px;
     padding-top: 5px;
 }
+
+.main {
+    margin: 16px 0px;
+    background-color: rgba(142, 179, 179, 0.544);
+    border-radius: 20px;
+    padding: 10px;
+    color: aliceblue;
+    /* display: flex;
+    align-items: center;
+    justify-content:space-evenly; */
+    font-size: 16px;
+}
+
+.main ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-evenly;
+} 
+
+.main li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.m-icon i  {
+    color: rgb(230, 185, 19);
+    margin-left: 20px;
+}
+
+.m-deg span {
+    margin-right: 20px;
+}
