@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="card">
+
+        <div class="searchBar">
+            <input id="search" type="search" placeholder="enter the city">
+            <button class="icon"><img src="search.png" >
+            
+        </button>
+        </div>
+
+        <div class="err">
+            <p>invalid city name</p>
+        </div>
+
+
+        <div class="weather">
+
+            <div class="temperature">
+                <img class="weather-icon" src="rain.png"  >
+                <p class="temp">26°C</p>
+                <p id="city">Oujda</p>
+            </div>
+
+           
+            <div class="info">
+                <div class="humidity">
+                    <img src="humidity.png" alt="">
+                    <p id="humidity">48%</p>
+                    <p>humidity</p>
+                </div>
+                <div class="wind">
+                    <img src="wind.png" >
+                    <p id="windSpeed">36 km/h</p>
+                    <p>wind speed</p>
+                </div>
+
+            </div>
+        </div>        
+
+               
+       
+    </div>
+
+
+   
+    <script type = "module" src="weather.js"></script>
+</body>
+</html>
