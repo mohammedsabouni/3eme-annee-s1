@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <select name="" id="listP">
+            <option value="produit1">produit1</option>
+            <option value="produit2">produit2</option>
+            <option value="produit3">produit3</option>
+            <option value="produit4">produit4</option>
+        </select>
+        <input type="number" id="qte" placeholder="quantite">
+        <input type="number" id="prix" placeholder="prix">
+        <input type="button" id="btn" value="calculer" onclick="calculer()">
+
+    </form>
+    <p id="ht"></p>
+    <p id="ttc"></p>
+    <p id="tva"></p>
+    <script>
+        function calculer (){
+            const qte = document.getElementById("qte").value;
+            const prix = document.getElementById("prix").value;
+            const ht = document.getElementById("ht");
+            const ttc = document.getElementById("ttc");
+            const tva = 0.2;
+            const tvacalcule = document.getElementById("tva");
+            
+            
+            if (isFinite(qte) && isFinite(prix)){
+                let htcal = parseInt(qte)*parseInt(prix);
+                let tvacal = htcal*tva
+                let ttcval = htcal+tvacal;
+                
+
+
+                ht.innerHTML = "prix ht = "+ htcal;
+                tvacalcule.innerHTML = "tva = "+ tvacal;
+                ttc.innerHTML = "prix ttc = "+ ttcval;      
+                     
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>
