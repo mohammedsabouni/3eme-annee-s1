@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>convertisseur</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" placeholder="mad" id="mad">
+        <input type="number" placeholder="usd" id="usd">
+        <label for="toUsd">to usd</label>
+        <input type="radio" name="devise" id="toUsd" >
+        <label for="toMad">to mad</label>
+        <input type="radio" name="devise" id="toMad" >
+        <input type="button" value="convertir" onclick="convertir()">
+
+    </form>
+
+    <script>
+        function convertir(){
+            const mad = document.getElementById("mad").value;
+            const usd = document.getElementById("usd").value;
+            const toUsd = document.getElementById("toUsd").checked;
+            const toMad = document.getElementById("toMad").checked;
+            const madInput = document.getElementById("mad");
+            const usdInput = document.getElementById("usd");
+            if (toUsd && isFinite(mad)) {
+                usdInput.value = mad/10;
+            } else if (toMad && isFinite(usd)) {
+                madInput.value = usd*10;
+            }
+        }
+    </script>
+</body>
+</html>
