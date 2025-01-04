@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" id="number" placeholder="number">
+        <input type="button" value="ajouter" onclick="ajouter()">
+        <input type="button" value="afficher" onclick="afficher()">
+        <input type="button" value="somme" onclick="afficherSomme()">
+        <input type="button" value="moyenne" onclick="afficherMoyenne()">
+        <input type="button" value="max" onclick="afficherMax()">
+        <input type="button" value="min" onclick="afficherMin()">
+        <ul id="numList" style="list-style: none"></ul>
+        <p></p>
+    </form>
+    <script>
+        let numbers = [];
+        const numList = document.getElementById("numList");
+        const numInput = document.getElementById("number");
+        const paragraph = document.querySelector("p") 
+        function ajouter(){
+            numbers.push(numInput.value)
+        }
+        function afficher(){
+            for(let i = 0; i < numbers.length; i++){
+                numList.innerHTML += "<li>"+numbers[i]+"</li>"
+            }
+        }
+
+        function calcSomme(){
+            let somme = 0
+            for(let i = 0; i < numbers.length; i++){
+                somme += parseInt(numbers[i]) 
+            }
+            return somme  
+        }
+        function afficherSomme(){
+            paragraph.innerHTML += "<br/> la somme est : "+ calcSomme()
+        }
+
+        function calcMoyenne(){
+            let somme = calcSomme() ;
+            return somme / numbers.length
+        }
+
+        function afficherMoyenne (){
+            paragraph.innerHTML += "<br/> la moyenne est : "+ calcMoyenne()
+        }
+
+        function calcMax(){
+            let max = numbers[0]
+            for(let i = 1; i < numbers.length; i++){
+                if(max < numbers[i]){
+                    max = numbers[i]
+                }
+            }
+            return max
+        }
+
+        function afficherMax(){
+            paragraph.innerHTML += "<br/> le max est : "+ calcMax()
+        }
+
+        function calcMin(){
+            let min = numbers[0]
+            for(let i = 1; i < numbers.length; i++){
+                if(min > numbers[i]){
+                    min = numbers[i]
+                }
+            }
+            return min
+        }
+
+        function afficherMin(){
+            paragraph.innerHTML += "<br/> le min est : "+ calcMin()
+        }
+        
+    </script>
+</body>
+</html>
