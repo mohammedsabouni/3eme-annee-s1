@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="verb">verb</label>
+        <input type="text" placeholder="ex : jouer" id="verb">
+        <input type="button" value="conjuguer" onclick="conjuguer()" >
+    </form>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+        function conjuguer(){
+            let verb = document.getElementById("verb").value;
+            let li = document.querySelectorAll("li");
+            const sujet = ["je", "tu", "il", "nous", "vous", "ils"];
+            const terminaisons = ["e", "es", "e", "ons", "ez", "ent"];
+            if(verb.endsWith("er")){
+                let radical = verb.slice(0, -2);
+                for (let i = 0; i < 6; i++) {
+                    li[i].innerHTML = sujet[i] + " " + radical + terminaisons[i];
+                }
+                
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>
