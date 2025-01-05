@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>product list</h1>
+    <form action="">
+        <label for="product">sku</label>
+        <input type="text" placeholder="product" id="product">
+        <label for="price">price</label>
+        <input type="number" placeholder="price" id="price">
+        <input type="button" value="add" onclick="addProduct()">
+        <br>
+        <table id="productList">
+            <tr>
+                <th>product</th>
+                <th>price</th>
+                <th>options</th>
+            </tr>
+        </table>
+    </form>
+    <script>
+        let productList = document.getElementById("productList");
+        let productInput = document.getElementById("product");
+        let price = document.getElementById("price");
+        let productData = [];
+        let id = 1;
+
+        function addProduct() {
+            productData.push({
+                "product": productInput.value, 
+                "price": price.value, 
+                "id": id++
+            });
+            refreshTable();
+        }
+
+        function refreshTable() {
+            // Réinitialiser le tableau avec l'en-tête
+            productList.innerHTML = `
+                <tr>
+                    <th>product</th>
+                    <th>price</th>
+                    <th>options</th>
+                </tr>
+            `;
+            
+            // Ajouter chaque produit
+            productData.forEach(item => {
+                productList.innerHTML += `
+                    <tr>
+                        <td>${item.product}</td>
+                        <td>${item.price}</td>
+                        <td>
+                            <input type='button' value='delete' onclick='deleteProd(${item.id})'>
+                            <input type='button' value='edit' onclick='editProd(${item.id})'>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        function deleteProd(id) {
+            productData = productData.filter(prod => prod.id != id);
+            refreshTable();
+            console.log(productData);
+        }
+
+        function editProd(id) {
+            let product = productData.find(prod => prod.id == id);
+            if(product) {
+                productInput.value = product.product;
+                price.value = product.price;
+                deleteProd(id);
+            }
+        }
+    </script>
+</body>
+</html>
