@@ -52,10 +52,10 @@
         }
 
         function calcMax(){
-            let max = numbers[0]
+            let max = parseInt(numbers[0]) 
             for(let i = 1; i < numbers.length; i++){
-                if(max < numbers[i]){
-                    max = numbers[i]
+                if(max < parseInt(numbers[i]) ){
+                    max = parseInt(numbers[i])
                 }
             }
             return max
@@ -66,10 +66,10 @@
         }
 
         function calcMin(){
-            let min = numbers[0]
+            let min = parseInt(numbers[0])
             for(let i = 1; i < numbers.length; i++){
-                if(min > numbers[i]){
-                    min = numbers[i]
+                if(min > parseInt(numbers[i])){
+                    min = parseInt(numbers[i])
                 }
             }
             return min

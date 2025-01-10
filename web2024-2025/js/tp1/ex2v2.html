@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>convertisseur</title>
+</head>
+<body>
+    <form action="">
+        <input type="number" placeholder="mad" id="mad" onkeyup="convertirDh()">
+        <input type="number" placeholder="usd" id="usd" onkeyup="convertirUsd()">
+        
+    </form>
+
+    <script>
+        const mad = document.getElementById("mad");
+        const usd = document.getElementById("usd");
+        
+        function convertirDh(){  
+            
+            if (isFinite(mad.value)) {
+                usd.value = mad.value/10;
+            }
+        }
+
+        function convertirUsd(){           
+            if (isFinite(usd.value)) {
+                mad.value = usd.value*10;
+            }
+        }
+    </script>
+</body>
+</html>
