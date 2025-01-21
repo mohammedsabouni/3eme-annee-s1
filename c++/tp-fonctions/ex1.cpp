@@ -26,9 +26,10 @@ int main(){
 }
 
 void LIRE_TAB (int *&T ,const int & N){
-    for (int i = 0; i < N; i++ ){
+    
+    for (int *p = T; p < T+N; p++ ){
         cout << "saisir la valeur "<< i+1 << " du tableau" << endl;
-        cin >> T[i];
+        cin >> *(p);
     }
 }
 
